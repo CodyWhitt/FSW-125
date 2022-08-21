@@ -10,23 +10,23 @@ export default function({addItem}) {
 
     const pushArray = () => {
         itemName = {
-            name: document.getElementById('one').value
+            name: document.getElementById('name').value
         }
 
         description = {
-            description: document.getElementById('two').value
+            description: document.getElementById('description').value
         }
 
         recyclable = {
-            recyclable: document.getElementById('three').checked
+            recyclable: document.getElementById('recyclable').checked
         }
 
         quantity = {
-            quantity: document.getElementById('four').value
+            quantity: document.getElementById('quantity').value
         }
 
         pricePerUnit = {
-            pricePerUnit: document.getElementById('five').value
+            pricePerUnit: document.getElementById('pricePerUnit').value
         }
 
         const object = {
@@ -44,11 +44,11 @@ export default function({addItem}) {
 
     return (
         <div id='itemBox'>
-            <input placeholder="Name" value={itemName} id='one'></input>
-            <input placeholder="Description" value={description} id='two'></input> <><br/></>
-            Recyclable?<input type='radio' value={recyclable} id='three'></input> <><br/></>
-            <input placeholder="Quantity" value={quantity} id='four'></input>
-            <input type='number' placeholder="Price Per Unit" value={pricePerUnit} id='five'></input>
+            <input placeholder="Name" value={itemName} id='name'></input>
+            <input placeholder="Description" value={description} id='description'></input> <><br/></>
+            Recyclable?<input type='checkBox' value={recyclable} id='recyclable'></input> <><br/></>
+            <input placeholder="Quantity" value={quantity} id='quantity'></input>
+            <input type='number' placeholder="Price Per Unit" value={pricePerUnit} id='pricePerUnit'></input>
             <button onClick={() => pushArray()}>Add New</button>
         </div>
     )
