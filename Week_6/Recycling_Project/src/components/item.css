@@ -1,0 +1,18 @@
+#itemBox {
+    background: grey;
+    padding: 3px;
+    border: 3px solid black;
+    margin: 5px;
+    width: 200px
+}
+
+.setInput {
+    background: transparent;
+    border: none;
+    margin: 3px;
+    outline: none
+}
+
+::placeholder {
+    color: black;
+}
