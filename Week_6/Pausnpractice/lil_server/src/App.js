@@ -9,18 +9,18 @@ function App() {
   const [itemsDisplay, setItemsDisplay] = useState('')
   const [flag, setFlag] = useState(true);
 
-  const handleEvent = event => {
+  const handleEvent = event => { //sets user input to object userInput
     setUserInput(event.target.value)
     console.log(userInput)
   }
 
-  useEffect(() => {
+  useEffect(() => { //http://localhost:9000/items
     axios.get('./items')
       .then(res => setItems(res.data))
       .catch(err => console.log(err))
   }, [flag]);
 
-  const findItems = (itemsList) => {
+  const findItems = (itemsList) => { //pulls in the itemsList array state and creates only usable div's for 'type' match 
     const displayItems = itemsList.map((itemsList) => {
       if (userInput === itemsList.type) {
         return <div key={uuidv4()}>{itemsList.name}, {itemsList.type}</div>
