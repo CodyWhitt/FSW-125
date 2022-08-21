@@ -1,7 +1,11 @@
 import { v4 as uuidv4 } from 'uuid';
 import './item.css'
+import { useState, createContext, useContext, Component } from "react";
+
 
 export default function Item({item, deleteItem, editItem}) {
+
+    const [flag, setFlag] = useState(true)
 
     let id1=uuidv4()
     let id2=uuidv4()
@@ -43,21 +47,29 @@ export default function Item({item, deleteItem, editItem}) {
             ...quantity,
             ...pricePerUnit
         }
-
-        console.log(object)
-        console.log(item._id)
         editItem(item._id, object)
     }
-
+    if (flag == true) {
     return (
         <div id='itemBox'>
-            <input className='setInput' placeholder={item.name} value={itemName} id={id1}></input>
-            <input className='setInput' placeholder={item.description} value={description} id={id2}></input>
-            <input className='setInput' placeholder={'Recyclable? ' + item.recyclable} value={recyclable} id={id3}></input>
-            <input className='setInput' placeholder={item.quantity} value={quantity} id={id4}></input>
-            <input className='setInput' placeholder={item.pricePerUnit} value={pricePerUnit} id={id5}></input>
-            <button className="edit-btn" onClick={() => change(item._id)}>Edit</button>
+            <div>{item.name}</div>
+            <div>{item.description}</div>
+            Recyclable?<input type={'checkbox'} checked={item.recyclable} readOnly></input>
+            <div>{item.quantity}</div>
+            <div>${item.pricePerUnit}</div>
+            <button className="edit-btn" onClick={() => setFlag(!flag)}>Edit</button>
             <button className="delete-btn" onClick={() => deleteItem(item._id)}>Delete</button>
         </div>
-    )
+    ) } else {
+        return (
+        <div id='itemBox'>
+        <input className='setInput' placeholder={item.name} value={itemName} id={id1}></input>
+        <input className='setInput' placeholder={item.description} value={description} id={id2}></input> <br/>
+        Recyclable?<input className='setInput' value={recyclable} id={id3} type='checkBox'></input> <br/>
+        <input className='setInput' placeholder={item.quantity} value={quantity} id={id4} type='number'></input>
+        <input className='setInput' placeholder={item.pricePerUnit} value={pricePerUnit} id={id5} type='number'></input>
+        <button className="edit-btn" onClick={() => {change(item._id); setFlag(!flag)}}>Accept</button>
+        <button className="delete-btn" onClick={() => setFlag(!flag)}>Cancel</button>
+    </div>
+    ) }
 }

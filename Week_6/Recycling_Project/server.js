@@ -5,7 +5,7 @@ const { v4: uuidv4 } = require('uuid');
 const PORT = 9000;
 
 // route paths
-const recycledRouter = require('../../Week_5/assigment_1/src/components/recycled');
+const recycledRouter = require('../../Week_6/Recycling_Project/src/components/recycled');
 
 // middleware
 app.use(express.json());

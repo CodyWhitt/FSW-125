@@ -10,7 +10,7 @@ let recycledItems = [
     description:'plastic container',
     recyclable: true, 
     quantity: 12,
-    pricePerUnit: '$' + .23,
+    pricePerUnit: .23,
     _id: uuidv4()
   },
 
@@ -19,7 +19,7 @@ let recycledItems = [
     description:'cardboard box', 
     recyclable: true, 
     quantity: 1,
-    pricePerUnit: '$' + .15,
+    pricePerUnit: .15,
     _id: uuidv4()
   },
 ];
@@ -57,4 +57,4 @@ recycledRouter
 ;
 
 //modularization 
-module.exports = recycledRouter
+module.exports = recycledRouter 
