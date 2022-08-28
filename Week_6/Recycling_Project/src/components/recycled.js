@@ -49,6 +49,7 @@ recycledRouter
 
   .put('/:itemId', (req, res) => {
     const itemId = req.params.itemId; //assigns /:itemId from url to a var
+    console.log(itemId)
     const itemIndex = recycledItems.findIndex(item => item._id === itemId); //finds index of wanted item
     Object.assign(recycledItems[itemIndex], req.body); //updates via body to item of index through .json format
     res.send(`Resource successfully updated`);
