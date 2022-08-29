@@ -1,4 +1,3 @@
-import GameList from "./GameList";
 import { useState } from "react";
 
 export default function GetOneComp({getOne, keyedGame}) {
@@ -9,6 +8,7 @@ export default function GetOneComp({getOne, keyedGame}) {
         getOne(document.getElementById('key').value)
     }
 
+    //switches between keyed get on request 
     if (keyed === false){
         return (
             <div className="listItem"> 

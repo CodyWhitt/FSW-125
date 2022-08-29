@@ -7,11 +7,14 @@ import GetOneComp from './Components/GetOneComp';
 
 function App() {
 
+  // states used for holding objects and switching
   const [filtered, setFiltered] = useState(false)
   const [games, setGames] = useState([]);
   const [keyedGame, setKeyedGame] = useState([])
   const [flag, setFlag] = useState(true);
 
+
+  // all CRUD methods turned into JS
   const deleteItem = (id) => {
     axios.delete(`/gameData/${id}`)
       .catch(err => console.log(err))
@@ -50,6 +53,8 @@ function App() {
       .catch(err => console.log(err))
   }, [flag]); 
 
+
+  // switches between filtered and not
   if (filtered === false) {
     return (
       <div className="App">

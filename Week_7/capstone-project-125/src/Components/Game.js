@@ -4,6 +4,7 @@ export default function Game({games, deleteItem, editItem}) {
 
     const [edit, setEdit] = useState(false)
 
+    // creates objects and passes it into object array
     function handleEvent(){ 
         let newGame = {
             name: document.getElementById('name').value,
@@ -17,6 +18,7 @@ export default function Game({games, deleteItem, editItem}) {
 
     }
 
+    //switches between edit mode
     if (edit === false) {
 
         return (

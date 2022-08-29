@@ -4,6 +4,7 @@ export default function AddGame({addItem}){
 
     const [edit, setEdit] = useState(false)
 
+    // creates object and passes it into object array
     function handleEvent(){ 
         let newGame = {
             name: document.getElementById('name').value,
@@ -18,6 +19,7 @@ export default function AddGame({addItem}){
         return
     }
 
+    //switches add item box on and off
     if (edit === false) {
         return(
             <div className="listItem">
